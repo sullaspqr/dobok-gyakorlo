@@ -29,8 +29,17 @@ export const List = () =>{
             <div className="container">
                 <div className="row g-4">
                 {dobok.map((dob, index)=> (
-                    <div className="col-12 col-sm-6 col-md-4 col-lg-3 key={index}">
-
+                    <div className="col-12 col-sm-6 col-md-4 col-lg-3" key={index}>
+                            <div className="card h-100 shadow-lg">
+                                <NavLink to={"/sinlge/" + dob.id}>
+                                Egy dob részletei </NavLink>
+                                <div className="card-body">
+                                    <h6 className="card-title">{dob.name}</h6>
+                                    <p className="card-text">{dob.brand}</p>
+                                    <p className="card-text">{dob.price}</p>
+                                    <p className="card-text">{dob.quantity}</p>
+                                </div>
+                            </div>
                     </div>
                 ))}
                 </div>
